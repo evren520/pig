@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material 3 Demo</title>
+
+    <!-- Material Web -->
+    <script type="importmap">
+    {
+        "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+        }
+    }
+    </script>
+
+    <script type="module">
+        import '@material/web/all.js';
+        import {styles} from
+            '@material/web/typography/md-typescale-styles.js';
+
+        document.adoptedStyleSheets.push(styles.styleSheet);
+    </script>
+
+    <style>
+        :root {
+            color-scheme: light dark;
+            --md-sys-color-primary: #6750A4;
+            --md-sys-color-on-primary: #FFFFFF;
+            --md-sys-color-surface: #FEF7FF;
+            --md-sys-color-on-surface: #1D1B20;
+            --md-sys-color-surface-container: #F0EAF4;
+        }
+
+        body {
+            margin: 0;
+            padding: 32px 20px;
+            font-family: Roboto, system-ui, sans-serif;
+            background: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+        }
+
+        main {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .card {
+            padding: 24px;
+            border-radius: 24px;
+            background: var(--md-sys-color-surface-container);
+            margin: 24px 0;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+<main>
+    <h1 class="md-typescale-headline-large">
+        Material 3
+    </h1>
+
+    <p class="md-typescale-body-large">
+        欢迎来到我的个人空间。
+    </p>
+
+    <div class="card">
+        <h2 class="md-typescale-title-large">
+            Material Components
+        </h2>
+
+        <p class="md-typescale-body-medium">
+            这是一个使用 Google Material Web 的示例。
+        </p>
+
+        <div class="actions">
+            <md-filled-button>
+                主要按钮
+            </md-filled-button>
+
+            <md-outlined-button>
+                次要按钮
+            </md-outlined-button>
+
+            <md-text-button>
+                文字按钮
+            </md-text-button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="md-typescale-title-medium">
+            设置
+        </h2>
+
+        <md-outlined-text-field
+            label="你的名字"
+            placeholder="请输入内容">
+        </md-outlined-text-field>
+
+        <p>
+            <md-switch selected></md-switch>
+            开启通知
+        </p>
+
+        <p>
+            <md-checkbox checked></md-checkbox>
+            记住我的选择
+        </p>
+    </div>
+</main>
+</body>
+</html>
